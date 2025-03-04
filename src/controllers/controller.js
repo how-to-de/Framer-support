@@ -2,6 +2,9 @@ const cryptoJS = require('crypto-js');
 const { StatusCodes } = require('http-status-codes');
 
 const getSHA256 = async (req, res) => {
+
+    console.log('body:',req.body);
+
     if (!req.body.data) {
         return res.status(400).json({ message: "Data is required" });
     }
